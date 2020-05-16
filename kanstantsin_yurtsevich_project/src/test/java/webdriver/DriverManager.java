@@ -2,16 +2,40 @@ package webdriver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
 
 public class DriverManager {
 
-    static WebDriver driver;
+    public static WebDriver getDriver(Config config) {
 
-    public static WebDriver getChromeDriver(){
+        switch (config) {
+            case CHROME:
+                return getChromeDriver();
+            case FF:
+                return getFFDriver();
+            case EDGE:
+                return getEdgeDriver();
+            default:
+                throw null;
+        }
+    }
+
+    private static WebDriver getEdgeDriver() {
+
+        return new EdgeDriver();
+    }
+
+    private static WebDriver getFFDriver() {
+        return new FirefoxDriver();
+    }
+
+    private static WebDriver getChromeDriver() {
         String pathToDriver = DriverManager.class.getClassLoader().getResource("webdriver/chromedriver").getPath();
         System.setProperty("webdriver.chrome.driver", pathToDriver);
         System.setProperty("webdriver.chrome.silentOutput", "true");
-        driver = new ChromeDriver();
-        return driver;
+        return new ChromeDriver();
     }
 }

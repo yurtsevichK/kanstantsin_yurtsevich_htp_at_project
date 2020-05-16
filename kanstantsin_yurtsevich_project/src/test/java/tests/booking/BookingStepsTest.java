@@ -1,4 +1,4 @@
-package tests;
+package tests.booking;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import webdriver.Driver;
 
 import static org.junit.Assert.assertEquals;
 
-public class BookingSteps {
+public class BookingStepsTest {
 
     protected WebDriver driver;
     private static final String BOOKING_URL = "https://www.booking.com/";
@@ -20,9 +20,7 @@ public class BookingSteps {
 
     @Before
     public void startBrowser() {
-        driver = Driver.getWebdriver();
-        Driver.setTimeout();
-        Driver.maximize();
+
         bookingMainPage = new BookingMainPage(driver);
         bookingResultPage = new BookingResultsPage(driver);
     }
@@ -52,10 +50,5 @@ public class BookingSteps {
         bookingResultPage.filterHotelsByStars();
         String expected = "rgba(255, 0, 0, 1)";
         assertEquals("Color isn't red", expected, bookingResultPage.getColorOfAddress());
-    }
-
-    @After
-    public void stopBrowser() {
-        Driver.closeDriver();
     }
 }
