@@ -1,5 +1,5 @@
 package webdriver;
 
 public enum Config {
-    CHROME, FF, EDGE
+    CHROME, FF, EDGE, REMOTE
 }
