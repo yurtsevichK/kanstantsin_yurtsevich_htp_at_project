@@ -3,7 +3,7 @@ package other;
 public class GenerateFakeAddress {
 
     public static String generateEmail() {
-        String preparedString = "abcdefghijklmnopqrstuvxyz";
+        String preparedString = "waeaddsgdgfrhfgjksr";
         StringBuilder sb = new StringBuilder(6);
         for (int j = 0; j < 6; j++) {
             int index
