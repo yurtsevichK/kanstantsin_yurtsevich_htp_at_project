@@ -1,0 +1,18 @@
+{
+  "recipename": "Ice cream",
+  "ingredlist": [
+    {
+      "quantity": 3,
+      "itemdescription": "chocolate syrup or chocolate fudge"
+    },
+    {
+      "itemdescription": "nuts",
+      "quantity": 1
+    },
+    {
+      "quantity": 1,
+      "itemdescription": "cherry"
+    }
+  ],
+  "preptime": 5
+}
