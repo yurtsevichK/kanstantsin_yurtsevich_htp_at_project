@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        glue = {"tests.wssearchsteps"}, //packages with annotations (steps) that will be executed
+        glue = {"tests.searchsteps"}, //packages with annotations (steps) that will be executed
         features = {"src/test/resources/features/UserApiTest.feature"
         },
         tags = {"@qa or @prod"}, //annotation @qa or @prod should be added to .feature file
